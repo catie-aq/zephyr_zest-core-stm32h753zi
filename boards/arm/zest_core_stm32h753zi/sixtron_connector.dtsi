@@ -24,7 +24,7 @@
                    <PWM1 0 &gpioa 3 0>,
                    <PWM2 0 &gpioa 6 0>,
                    <PWM3 0 &gpiob 0 0>,
-                   <PWM4 0 &gpiob 1 0>,
+                   <ICAP 0 &gpiob 1 0>,
                    <WKUP 0 &gpioa 0 0>,
                    <ADC1 0 &gpiof 3 0>,
                    <ADC2 0 &gpiof 4 0>,
@@ -35,7 +35,7 @@
                    <DIO2 0 &gpiog 13 0>,
                    <DIO3 0 &gpiog 12 0>,
                    <DIO4 0 &gpiob 2 0>,
-                   <DIO5 0 &gpioG 0 0>,
+                   <DIO5 0 &gpiog 0 0>,
                    <DIO6 0 &gpioe 9 0>,
                    <DIO7 0 &gpiog 1 0>,
                    <DIO8 0 &gpioe 15 0>,
@@ -51,6 +51,53 @@
                    <DIO18 0 &gpioe 8 0>,
                    <DIO19 0 &gpiog 15 0>,
                    <DIO20 0 &gpiod 4 0>;
+    };
+
+    sixtron_connector_2: sixtron-connector-2 {
+        compatible = "sixtron-bus";
+        #gpio-cells = <2>;
+        gpio-map-mask = <0xffffffff 0xffffffc0>;
+        gpio-map-pass-thru = <0 0x3f>;
+        gpio-map = <CAN_RX 0 &gpiod 0 0>,
+                   <CAN_TX 0 &gpiod 1 0>,
+                   <I2C_SCL 0 &gpiob 8 0>,
+                   <I2C_SDA 0 &gpiob 9 0>,
+                   <UART_RX 0 &gpioc 7 0>,
+                   <UART_TX 0 &gpioc 6 0>,
+                   <SPI_MOSI 0 &gpiod 7 0>,
+                   <SPI_MISO 0 &gpiog 9 0>,
+                   <SPI_SCK 0 &gpiog 11 0>,
+                   <SPI_SS 0 &gpiog 10 0>,
+                   <PWM1 0 &gpiod 12 0>,
+                   <PWM2 0 &gpiod 13 0>,
+                   <PWM3 0 &gpiod 14 0>,
+                   <ICAP 0 &gpiod 15 0>,
+                   <WKUP 0 &gpioc 13 0>,
+                   <ADC1 0 &gpiof 11 0>,
+                   <ADC2 0 &gpiof 12 0>,
+                   <ADC3 0 &gpiof 13 0>,
+                   <ADC4 0 &gpiof 14 0>,
+                   <DAC 0 &gpioa 5 0>,
+                   <DIO1 0 &gpiod 2 0>,
+                   <DIO2 0 &gpioc 12 0>,
+                   <DIO3 0 &gpioc 10 0>,
+                   <DIO4 0 &gpioa 15 0>,
+                   <DIO5 0 &gpiog 8 0>,
+                   <DIO6 0 &gpioc 8 0>,
+                   <DIO7 0 &gpioc 9 0>,
+                   <DIO8 0 &gpioa 10 0>,
+                   <DIO9 0 &gpiog 7 0>,
+                   <DIO10 0 &gpioc 11 0>,
+                   <DIO11 0 &gpiod 3 0>,
+                   <DIO12 0 &gpiod 9 0>,
+                   <DIO13 0 &gpiog 4 0>,
+                   <DIO14 0 &gpiog 5 0>,
+                   <DIO15 0 &gpiog 3 0>,
+                   <DIO16 0 &gpiog 6 0>,
+                   <DIO17 0 &gpiog 2 0>,
+                   <DIO18 0 &gpiod 8 0>,
+                   <DIO19 0 &gpiod 11 0>,
+                   <DIO20 0 &gpiod 10 0>;
     };
 };
 
