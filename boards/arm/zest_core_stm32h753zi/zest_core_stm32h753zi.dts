@@ -4,13 +4,13 @@
  */
 
 /dts-v1/;
-#include <st/l4/stm32l4a6Xg.dtsi>
-#include <st/l4/stm32l4a6rgtx-pinctrl.dtsi>
+#include <st/h7/stm32h753Xi.dtsi>
+#include <st/h7stm32h753zitx-pinctrl.dtsi>
 #include "sixtron_connector.dtsi"
 
 / {
-	model = "CATIE Zest Core STM32l4A6RG board";
-	compatible = "catie,zest-core-stm32l4a6rg";
+	model = "CATIE Zest_Core_STM32H753ZI board";
+	compatible = "catie,zest-core-stm32h753zi";
 
 	chosen {
 		zephyr,console = &usart3;
