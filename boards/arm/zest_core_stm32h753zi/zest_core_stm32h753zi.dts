@@ -5,7 +5,7 @@
 
 /dts-v1/;
 #include <st/h7/stm32h753Xi.dtsi>
-#include <st/h7stm32h753zitx-pinctrl.dtsi>
+#include <st/h7/stm32h753zitx-pinctrl.dtsi>
 #include "sixtron_connector.dtsi"
 
 / {
@@ -13,8 +13,8 @@
 	compatible = "catie,zest-core-stm32h753zi";
 
 	chosen {
-		zephyr,console = &usart3;
-		zephyr,shell-uart = &usart3;
+		zephyr,console = &usart1;
+		zephyr,shell-uart = &usart1;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 	};
@@ -41,83 +41,66 @@
 	};
 };
 
-&clk_hsi {
+&clk_hsi48 {
+	status = "okay";
+};
+
+&clk_hse {
+	hse-bypass;
+	clock-frequency = <DT_FREQ_M(25)>;
 	status = "okay";
 };
 
 &pll {
-	div-m = <1>;
-	mul-n = <10>;
-	div-p = <7>;
+	div-m = <5>;
+	mul-n = <192>;
+	div-p = <2>;
 	div-q = <2>;
 	div-r = <2>;
-	clocks = <&clk_hsi>;
+	clocks = <&clk_hse>;
 	status = "okay";
 };
 
 &rcc {
 	clocks = <&pll>;
-	clock-frequency = <DT_FREQ_M(80)>;
-	ahb-prescaler = <1>;
-	apb1-prescaler = <1>;
-	apb2-prescaler = <1>;
+	clock-frequency = <DT_FREQ_M(480)>;
+	d1cpre = <1>;
+	hpre = <2>;
+	d1ppre = <2>;
+	d2ppre1 = <2>;
+	d2ppre2 = <2>;
+	d3ppre = <2>;
 };
 
-&usart3 {
-	pinctrl-0 = <&usart3_tx_pc4 &usart3_rx_pc5>;
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
 	status = "okay";
 };
 
-&i2c3 {
-	pinctrl-0 = <&i2c3_scl_pc0 &i2c3_sda_pc1>;
+&i2c2 {
+	pinctrl-0 = <&i2c2_scl_pf1 &i2c2_sda_pf0>;
 	pinctrl-names = "default";
 	status = "okay";
 };
 
 &usart2 {
-	pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+	pinctrl-0 = <&usart2_tx_pd5 &usart2_rx_pd6>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
 	status = "okay";
 };
 
-&spi2 {
-	pinctrl-0 = <&spi2_sck_pb10 &spi2_miso_pb14 &spi2_mosi_pb15>;
+&spi5 {
+	pinctrl-0 = <&spi5_sck_pf7 &spi5_miso_pf8 &spi5_mosi_pf9>;
 	pinctrl-names = "default";
-	cs-gpios = <&gpiob 2 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&gpiof 6 GPIO_ACTIVE_LOW>;
 	status = "okay";
 };
 
-&timers1 {
-	status = "okay";
-
-	pwm1: pwm {
-		pinctrl-0 = <&tim1_ch3_pa10>;
-		pinctrl-names = "default";
-		status = "okay";
-	};
-
-	pwm2: pwm {
-		pinctrl-0 = <&tim1_ch2_pa9>;
-		pinctrl-names = "default";
-		status = "okay";
-	};
-};
-
-&timers3 {
-	status = "okay";
-
-	pwm3: pwm {
-		pinctrl-0 = <&tim3_ch3_pb0>;
-		pinctrl-names = "default";
-		status = "okay";
-	};
-};
-
-&adc1 {
-	pinctrl-0 = <&adc1_in3_pc2 &adc1_in4_pc3 &adc1_in5_pa0 &adc1_in6_pa1>;
+&adc3 {
+	pinctrl-0 = <&adc3_inp5_pf3 &adc3_inp9_pf4 &adc3_inp4_pf5 &adc3_inp10_pc0>;
 	pinctrl-names = "default";
 	st,adc-clock-source = <SYNC>;
 	st,adc-prescaler = <4>;
@@ -125,7 +108,7 @@
 };
 
 &dac1 {
-	pinctrl-0 = <&dac1_out2_pa5>;
+	pinctrl-0 = <&dac1_out1_pa4>;
 	pinctrl-names = "default";
 	status = "okay";
 };
