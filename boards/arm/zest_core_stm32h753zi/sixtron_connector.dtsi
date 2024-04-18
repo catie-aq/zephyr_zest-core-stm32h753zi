@@ -107,6 +107,12 @@ sixtron_connector_1_spi: &spi5 {};
 sixtron_connector_1_adc: &adc3 {};
 sixtron_connector_1_dac: &dac1 {};
 
+sixtron_connector_2_i2c: &i2c1 {};
+sixtron_connector_2_uart: &usart6 {};
+sixtron_connector_2_spi: &spi1 {};
+sixtron_connector_2_adc: &adc1 {};
+sixtron_connector_2_dac: &dac1 {};
+
 sixtron_i2c: &sixtron_connector_1_i2c {};
 sixtron_uart: &sixtron_connector_1_uart {};
 sixtron_spi: &sixtron_connector_1_spi {};
