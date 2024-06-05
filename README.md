@@ -1,6 +1,6 @@
-# Zest_Core_STM32L4A6RG
+# Zest_Core_STM32H753ZI
 
-[Zest_Core_STM32L4A6RG](https://6tron.io/zest_core/zest_core_stm32l4a6rg_3_1_0) board support for Zephyr OS.
+[Zest_Core_STM32H753ZI](https://6tron.io/zest_core/zest_core_stm32h753zi_2_0_0) board support for Zephyr OS.
 
 ## Dependencies
 
@@ -9,13 +9,13 @@ This module depends on:
 
 ## Supported Features
 
-The Zephyr Zest_Core_STM32L4A6RG board configuration supports the following hardware features:
+The Zephyr Zest_Core_STM32H753ZI board configuration supports the following hardware features:
 
 | Interface | Controller                                                                  | Driver/Component                               |
 | :-------- | :-------------------------------------------------------------------------- | :--------------------------------------------- |
 | ADC       | on-chip                                                                     | adc                                            |
 | AES       | on-chip                                                                     | crypto                                         |
-| CAN       | on-chip                                                                     | can                                            |
+| CANFD     | on-chip                                                                     | can                                            |
 | CLOCK     | on-chip                                                                     | clock_control                                  |
 | DAC       | on-chip                                                                     | dac                                            |
 | DIE_TEMP  | on-chip                                                                     | sensor                                         |
@@ -48,6 +48,6 @@ See [STMicroelectronics vendor bindings](https://docs.zephyrproject.org/latest/b
 
 ## Usage
 
-1. Add the Zest_Core_STM32L4A6RG board to your workspace using the [6TRON module](https://github.com/catie-aq/zephyr_6tron-manifest.git).
+1. Add the Zest_Core_STM32H753ZI board to your workspace using the [6TRON module](https://github.com/catie-aq/zephyr_6tron-manifest.git).
 2. Compile and flash application using `west` tool:
-   - Board name: `zest_core_stm32l4a6rg`
+   - Board name: `zest_core_stm32h753zi`
