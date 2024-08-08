@@ -2,5 +2,4 @@
 # SPDX-License-Identifier: Apache-2.0
 
 config BOARD_ZEST_CORE_STM32H753ZI
-	bool "Zest_Core_STM32H753ZI Development Board"
-	depends on SOC_STM32H753XX
+	select SOC_STM32H753XX

@@ -3,9 +3,6 @@
 
 if BOARD_ZEST_CORE_STM32H753ZI
 
-config BOARD
-	default "zest_core_stm32h753zi"
-
 if NETWORKING
 
 config NET_L2_ETHERNET
