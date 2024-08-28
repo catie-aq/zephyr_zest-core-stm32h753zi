@@ -78,7 +78,6 @@
 			label = "image-scratch";
 			reg = <0x001c0000 DT_SIZE_K(256)>;  
 		};
-
 	};
 };
 
