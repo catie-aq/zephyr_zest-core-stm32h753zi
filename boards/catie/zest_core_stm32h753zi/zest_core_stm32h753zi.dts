@@ -17,6 +17,7 @@
 		zephyr,shell-uart = &usart1;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_partition;
 	};
 
 	leds {
@@ -42,43 +43,43 @@
 };
 
 &flash0 {
-    partitions {
-        compatible = "fixed-partitions";
-        #address-cells = <1>;
-        #size-cells = <1>;
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
 
-        /* 128KB for bootloader */
-        boot_partition: partition@0 {
-            label = "mcuboot";
-            reg = <0x00000000 DT_SIZE_K(128)>;
-            read-only;
-        };
+		/* 128KB for bootloader */
+		boot_partition: partition@0 {
+			label = "mcuboot";
+			reg = <0x00000000 DT_SIZE_K(128)>;
+			read-only;
+		};
 
-        /* storage: 128KB for settings */
-        storage_partition: partition@20000 {
-            label = "storage";
-            reg = <0x00020000 DT_SIZE_K(128)>;
-        };
+		/* storage: 128KB for settings */
+		storage_partition: partition@20000 {
+			label = "storage";
+			reg = <0x00020000 DT_SIZE_K(128)>;
+		};
 
-        /* application image slot: 768KB */
-        slot0_partition: partition@40000 {
-            label = "image-0";
-            reg = <0x00040000 DT_SIZE_K(768)>;
-        };
+		/* application image slot: 768KB */
+		slot0_partition: partition@40000 {
+			label = "image-0";
+			reg = <0x00040000 DT_SIZE_K(768)>;
+		};
 
-        /* backup slot: 768KB */
-        slot1_partition: partition@100000 {
-            label = "image-1";
-            reg = <0x00100000 DT_SIZE_K(768)>;
-        };
+		/* backup slot: 768KB */
+		slot1_partition: partition@100000 {
+			label = "image-1";
+			reg = <0x00100000 DT_SIZE_K(768)>;
+		};
 
-        /* swap slot: 256KB */
-        scratch_partition: partition@1c0000 {
-            label = "image-scratch";
-            reg = <0x001c0000 DT_SIZE_K(256)>;  
-        };
+		/* swap slot: 256KB */
+		scratch_partition: partition@1c0000 {
+			label = "image-scratch";
+			reg = <0x001c0000 DT_SIZE_K(256)>;  
+		};
 
-    };
+	};
 };
 
 &clk_hsi48 {
