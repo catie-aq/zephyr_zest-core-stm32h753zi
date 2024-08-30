@@ -201,6 +201,7 @@
 };
 
 &mdio {
+	status = "okay";
 	pinctrl-0 = <&eth_mdio_pa2 &eth_mdc_pc1>;
 	pinctrl-names = "default";
 
