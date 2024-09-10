@@ -210,5 +210,4 @@
 		reg = <0x00>;
 		status = "okay";
 	};
-	status = "okay";
 };
