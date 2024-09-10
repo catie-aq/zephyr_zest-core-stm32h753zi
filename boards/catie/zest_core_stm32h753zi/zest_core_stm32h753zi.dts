@@ -197,7 +197,6 @@
 		     &eth_txd0_pb12
 		     &eth_txd1_pb13>;
 	pinctrl-names = "default";
-	status = "okay";
 };
 
 &mdio {
