@@ -19,7 +19,7 @@
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,code-partition = &slot0_partition;
-		zephyr,canbus = &fdcan2;
+		zephyr,canbus = &fdcan1;
 	};
 
 	leds {
@@ -98,6 +98,16 @@
 	mul-n = <192>;
 	div-p = <2>;
 	div-q = <2>;
+	div-r = <2>;
+	clocks = <&clk_hse>;
+	status = "okay";
+};
+
+&pll2 {
+	div-m = <4>;
+	mul-n = <120>;
+	div-p = <2>;
+	div-q = <6>; 
 	div-r = <2>;
 	clocks = <&clk_hse>;
 	status = "okay";
@@ -320,10 +330,24 @@
 	};
 };
 
+/* on sixtron conenctor 2 */
+&fdcan1 {
+	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
+		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
+	pinctrl-0 = <&fdcan1_rx_pd0 &fdcan1_tx_pd1>;
+	pinctrl-names = "default";
+	bus-speed = <125000>;
+	bus-speed-data = <1000000>;
+	status = "okay";
+};
+
+/* on sixtron conenctor 1 */
 &fdcan2 {
 	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
 		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
 	pinctrl-0 = <&fdcan2_rx_pb5 &fdcan2_tx_pb6>;
 	pinctrl-names = "default";
+	bus-speed = <125000>;
+	bus-speed-data = <1000000>;
 	status = "okay";
 };
