@@ -330,7 +330,7 @@
 	};
 };
 
-/* on sixtron conenctor 2 */
+/* on sixtron connector 2 */
 &fdcan1 {
 	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
 		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
@@ -341,7 +341,7 @@
 	status = "okay";
 };
 
-/* on sixtron conenctor 1 */
+/* on sixtron connector 1 */
 &fdcan2 {
 	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
 		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
