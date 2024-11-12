@@ -6,6 +6,7 @@
 /dts-v1/;
 #include <st/h7/stm32h753Xi.dtsi>
 #include <st/h7/stm32h753zitx-pinctrl.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "sixtron_connector.dtsi"
 
 / {
