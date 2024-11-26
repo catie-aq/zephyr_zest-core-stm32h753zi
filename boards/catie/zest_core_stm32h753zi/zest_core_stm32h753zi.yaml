@@ -1,0 +1,19 @@
+identifier: zest_core_stm32h753zi
+name: Zest_Core_STM32H753ZI
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 512
+flash: 2048
+supported:
+  - uart
+  - gpio
+  - counter
+  - i2c
+  - pwm
+  - netif:eth
+  - spi
+  - can
+vendor: catie
