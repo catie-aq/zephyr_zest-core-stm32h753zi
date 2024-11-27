@@ -78,7 +78,7 @@
 		/* swap slot: 256KB */
 		scratch_partition: partition@1c0000 {
 			label = "image-scratch";
-			reg = <0x001c0000 DT_SIZE_K(256)>;  
+			reg = <0x001c0000 DT_SIZE_K(256)>;
 		};
 	};
 };
