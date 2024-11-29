@@ -140,6 +140,39 @@
 	status = "okay";
 };
 
+&timers3 {
+	status = "okay";
+	st,prescaler = <3>;
+
+	pwm3: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim3_ch1_pa6 &tim3_ch3_pb0 &tim3_ch4_pb1>;
+		pinctrl-names = "default";
+	};
+};
+
+&timers4 {
+	status = "okay";
+	st,prescaler = <3>;
+
+	pwm4: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim4_ch1_pd12 &tim4_ch2_pd13 &tim4_ch3_pd14 &tim4_ch4_pd15>;
+		pinctrl-names = "default";
+	};
+};
+
+&timers5 {
+	status = "okay";
+	st,prescaler = <3>;
+
+	pwm5: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim5_ch4_pa3>;
+		pinctrl-names = "default";
+	};
+};
+
 &adc3 {
 	pinctrl-0 = <&adc3_inp5_pf3 &adc3_inp9_pf4 &adc3_inp4_pf5 &adc3_inp10_pc0>;
 	pinctrl-names = "default";
