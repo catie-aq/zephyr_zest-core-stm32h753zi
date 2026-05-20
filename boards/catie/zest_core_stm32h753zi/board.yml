@@ -1,5 +1,6 @@
 board:
   name: zest_core_stm32h753zi
+  full_name: Zest_Core_STM32H753ZI
   vendor: catie
   socs:
     - name: stm32h753xx
